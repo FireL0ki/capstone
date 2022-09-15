@@ -16,6 +16,6 @@ print(birds)
 birds.add('cardinal')
 print(birds)
 
-bird_lsit = ['robin', 'swan', 'swan', 'eagle', 'cardinal', 'swan', 'robin']
-bird_list_no_duplicates = lsit(set(bird_list))
+bird_list = ['robin', 'swan', 'swan', 'eagle', 'cardinal', 'swan', 'robin']
+bird_list_no_duplicates = list(set(bird_list)) # can use set to get rid of the list duplicates. Order will be lost.
 print(bird_list_no_duplicates)
