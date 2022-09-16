@@ -1,4 +1,4 @@
-# program to convert a sentence into camel case
+""" camelCase converter program! """
 
 def banner():
     """ Display program name using stars """ # triple quotes are doc strings
