@@ -1,12 +1,13 @@
 # program to convert a sentence into camel case
 
 def banner():
-    """ Display program name """ # triple quotes are doc strings
+    """ Display program name using stars """ # triple quotes are doc strings
     message = 'Awesome camelCase Program!'
     stars = '*' * len(message)
     print(f'\n{stars} \n{message} \n{stars}\n')
 
 def instructions():
+    """ Display instructions for how to use the program """
     print('Enter a sentence and this program will convert it to camelCase.')
 
 def main():
