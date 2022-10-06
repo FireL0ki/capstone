@@ -15,6 +15,19 @@ from unittest import TestCase
 
 class TestStudentLists(TestCase):
 
+    def test_cannot_create_class_with_negative_students(self):
+        with self.assertRaises(StudentError):
+            test_class = ClassList(-1)
+        
+        with self.assertRaises(StudentError):
+            test_class = ClassList(0)
+
+
+    def test_can_create_class_with_positive_number_of_students(self):
+        test_class = ClassList(1)
+        # if this succeeds, it won't raise an error. How can I improve this test?
+            
+
     def test_add_student_check_student_in_list(self):
         test_class = ClassList(2)
         test_class.add_student('Test Student')
@@ -99,11 +112,23 @@ class TestStudentLists(TestCase):
     ## TODO write a test for index_of_student when the class_list list is empty.  
     # Assert index_of_student returns None for a student if the list is empty. 
     # use assertIsNone.
+    def test_add_remove_student_ensure_removed(self):
+        test_class = ClassList(2)
+        test_class.add_student('Test Student')
+        test_class.remove_student('Test Student')
+
+        self.assertNotIn('Test Student', test_class.class_list)
  
  
     ## TODO write another test for index_of_student. In the case when the 
     # class_list is not empty but has some students.
     # assert that searching for a student name that is not in the list, returns None.
+    def test_index_of_student_is_none_if_classlist_is_empty(self):
+        test_class = ClassList(2)
+        index = test_class.index_of_student('Test Student')
+        self.assertIsNone(index)
+
+
 
    
     ## TODO write a test for your new is_class_full method when the class is full. 
