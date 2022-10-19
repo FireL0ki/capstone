@@ -114,6 +114,7 @@ print(list(cats_by_name))
 cats_by_age = Cat.select().order_by(Cat.age.desc(), Cat.name.desc())  # first one is prioritized, then sort by next (name)
 print(list(cats_by_age))
 
+
 first_3 = Cat.select().order_by(Cat.name).limit(3)
 print(list(first_3))
 
