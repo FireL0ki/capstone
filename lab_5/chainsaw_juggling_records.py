@@ -1,6 +1,6 @@
 from peewee import *
 
-db = SqliteDatabase('chainsaw_jugglin_records.sqlite')
+db = SqliteDatabase('chainsaw_juggling_records.sqlite')
 
 """
 A menu - you need to add the database and fill in the functions. 
