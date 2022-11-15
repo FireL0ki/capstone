@@ -33,7 +33,7 @@ def get_current_weather(location, key):
     try:
         query = {'q': location, 'units': 'imperial', 'appid': key}
         response = requests.get(url, params=query)
-        response.raise_for_status() # riase exception for 400 or 500 errors
+        response.raise_for_status() # raie exception for 400 or 500 errors
         data = response.json() # this may error too, if response is not JSON
         return data, None # will return none if this errors
     except Exception as ex:
