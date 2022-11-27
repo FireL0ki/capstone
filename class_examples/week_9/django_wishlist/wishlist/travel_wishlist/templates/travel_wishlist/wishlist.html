@@ -1,0 +1,16 @@
+<h2>Travel Wishlist</h2>
+
+ <!-- django template tag {} -->
+ {% for place in places %}
+
+ <div>
+    {{ place.name }}
+ </div>
+
+ <!-- if a places list is empty, display the following-->
+ {% empty %}
+
+ <p>You have no places in your wishlist.</p>
+
+ {% endfor %}
+
