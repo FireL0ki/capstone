@@ -1,24 +1,27 @@
+{% extends 'travel_wishlist/base.html' %} <!-- tells wishlist template to go look for the base template to render-->
+{% block content %}
+
 <h2>Travel Wishlist</h2>
 
 <!-- url reversal-- will look up the url for the label place_list-->
 <form method="POST" action="{% url 'place_list' %}">
    {% csrf_token %}
    {{ new_place_form }}
-   <button type="submit">Add</button>
+   <button id="add-new-place" type="submit">Add</button>
 </form>
 
  <!-- django template tag {} -->
  {% for place in places %}
 
- <div>
+ <div class="wishlist-place">
+   <span class="place-name">{{ place.name }}</span>
     {{ place.name }}
 
    <!-- url reversing: look up url in a list of urls, using name (place_was_visited) and get the current place's pk-->
-   <form method="POST" action="{% url 'place_was_visited'  place.pk %"> 
+   <form class="visited-form" method="POST" action="{% url 'place_was_visited'  place.pk %"> 
       {% csrf_token %}
       <button type="">Visited!</button>
    </form>
-
 
  </div>
 
@@ -28,4 +31,6 @@
  <p>You have no places in your wishlist.</p>
 
  {% endfor %}
+
+ {% endblock %} <!-- everything between block content & endblock will be inserted into base.html in those tags-->
 

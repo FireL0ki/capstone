@@ -1,4 +1,7 @@
-<h2>Places you ahve visited</h2>
+{% extends 'travel_wishlist/base.html' %} <!-- tells wishlist template to go look for the base template to render-->
+{% block content %}
+
+<h2>Places you have visited</h2>
 
 <!-- conditional- if anything in the visited list -->
 { % if visited % }
@@ -10,9 +13,8 @@
 </ul>
 
 {% else %}
-
 <p>You have not visited any places yet</p>
 
 {% endif %}
 
-<a href="{% url 'place_list' %}">Places you've visited</a>
+{% endblock %}
