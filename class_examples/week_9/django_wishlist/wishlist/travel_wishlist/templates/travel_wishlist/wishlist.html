@@ -1,10 +1,25 @@
 <h2>Travel Wishlist</h2>
 
+<!-- url reversal-- will look up the url for the label place_list-->
+<form method="POST" action="{% url 'place_list' %}">
+   {% csrf_token %}
+   {{ new_place_form }}
+   <button type="submit">Add</button>
+</form>
+
  <!-- django template tag {} -->
  {% for place in places %}
 
  <div>
     {{ place.name }}
+
+   <!-- url reversing: look up url in a list of urls, using name (place_was_visited) and get the current place's pk-->
+   <form method="POST" action="{% url 'place_was_visited'  place.pk %"> 
+      {% csrf_token %}
+      <button type="">Visited!</button>
+   </form>
+
+
  </div>
 
  <!-- if a places list is empty, display the following-->
