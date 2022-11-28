@@ -3,4 +3,5 @@ __pycache__
 venv
 env
 .vscode
+.idea
 db.sqlite3
