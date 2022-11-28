@@ -14,12 +14,12 @@
  {% for place in places %}
 
  <div class="wishlist-place">
-   <span class="place-name">{{ place.name }}</span>
+   <span id="place-name-{{ place.pk }}" class="place-name">{{ place.name }}</span>
 
    <!-- url reversing: look up url in a list of urls, using name (place_was_visited) and get the current place's pk-->
    <form class="visited-form" method="POST" action="{% url 'place_was_visited'  place.pk %"> 
       {% csrf_token %}
-      <button type="">Visited!</button>
+      <button id="visited-button-{{ place.pk }}" type="">Visited!</button>
    </form>
 
  </div>
