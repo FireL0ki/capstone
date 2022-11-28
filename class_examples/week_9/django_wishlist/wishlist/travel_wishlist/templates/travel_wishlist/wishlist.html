@@ -15,7 +15,6 @@
 
  <div class="wishlist-place">
    <span class="place-name">{{ place.name }}</span>
-    {{ place.name }}
 
    <!-- url reversing: look up url in a list of urls, using name (place_was_visited) and get the current place's pk-->
    <form class="visited-form" method="POST" action="{% url 'place_was_visited'  place.pk %"> 
@@ -28,7 +27,7 @@
  <!-- if a places list is empty, display the following-->
  {% empty %}
 
- <p>You have no places in your wishlist.</p>
+   <p>You have no places in your wishlist.</p>
 
  {% endfor %}
 
