@@ -48,7 +48,7 @@ def place_was_visited(request, place_pk):
 
 
 @login_required
-def place_detail(request, place_pk):
+def place_details(request, place_pk):
     place = get_object_or_404(Place, pk=place_pk)
 
     # does this place belong to the current user?
@@ -73,11 +73,11 @@ def place_detail(request, place_pk):
         # if place is visited, show form; if place is not visited, no form
         if place.visited:
             review_form = TripReviewForm(instance=place)
-            return render(request, 'travel_wishlist/place_detail.html', {place: place, 'review_form': review_form})
+            return render(request, 'travel_wishlist/place_details.html', {place: place, 'review_form': review_form})
         else:
-            return render(request, 'travel_wishlist/place_detail.html', {place: place})
+            return render(request, 'travel_wishlist/place_details.html', {place: place})
 
-    # return render(request, 'travel_wishlist/place_detail.html', {'place': place})
+    # return render(request, 'travel_wishlist/place_details.html', {'place': place})
 
 @login_required
 def delete_place(request, place_pk):
