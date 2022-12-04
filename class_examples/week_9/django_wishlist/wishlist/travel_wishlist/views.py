@@ -4,6 +4,7 @@ from .forms import NewPlaceForm
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
 from django.contrib import messages
+from .forms import TripReviewForm
 
 # Create your views here.
 
