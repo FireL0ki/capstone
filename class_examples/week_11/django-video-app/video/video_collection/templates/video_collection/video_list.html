@@ -4,13 +4,33 @@
 
 <h2>Video List</h2>
 
+<h3>Search Videos</h3>
+
+<form method="GET" action="{% url 'video_list' %}">
+    {{ search_form }}
+    <button type="submit">Search</button>
+
+</form>
+
+<a href="{% url 'video_list' %}">
+    <button>Clear Search</button>
+</a>
+
+<!-- pluralize is a django pipe that will pluralize the word based on the length of the list -->
+<h3>{{ videos|length }} video{{ videos|length|pluralize }}</h3>
+
 {% for video in video %}
 
     <div>
         <h3>{{ video.name }}</h3>
         <h3>{{ video.notes }}</h3>
-        <a href="{{video.url}}">{{ video.url }}</h3>
+        <iframe width="420" height="315" src="https://youtube.com/embed/{{video.video_id}}"></iframe>
+        <p><a href="{{video.url}}">{{ video.url }}</a></p>
     </div>
+
+<!-- Displays if list is empty -->
+{% empty %}
+<p>No videos</p>
 
 {% endfor %}
 
